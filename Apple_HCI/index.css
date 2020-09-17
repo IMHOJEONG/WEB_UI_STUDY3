@@ -1,0 +1,252 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ----------------------- */
+/* 1. Navigation */
+nav{
+    background: rgba(240,240,240,0.8);
+    display: flex;
+    justify-content: center;
+}
+nav>div{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > div > * {
+     margin : 1em;
+}
+
+/* 2. Human Interface Guideline Header */
+header {
+    display: flex;
+    justify-content: center;
+    
+}
+header > div{
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 0.01em solid rgba(240,240,240,1);
+    /* border-bottom-color: ; */
+    width: 100%;
+    position: fixed;
+}
+header > div > * {
+    margin: 0.5em 2.5em;
+}
+
+header > div >div:last-child {
+    display: flex;
+}
+header > div >div:last-child > * {
+    margin: 0.5em 1em;
+    font-size: 0.7em;
+}
+
+.titles{
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+}
+.subtitles{
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+article{
+    display: flex;
+    margin-left: 22em;
+    flex-direction: column;
+}
+
+article>*{
+    margin: 1em;
+}
+
+article > div:first-child > div:last-child > div:first-child{
+    margin: 1em 0em;
+    display: flex;
+    justify-content: space-around;
+}
+article > div:first-child > div:last-child > div:first-child >*{
+    background : rgba(240,240,240,0.8);
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+article hr {
+    margin : -1em 1.5em
+}
+
+article > div:first-child > div:last-child > div:last-child {
+    margin: 2em 0em;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#voiceover, #button_shapes {
+    color: #808080;
+}
+
+.pictures {
+    width: 15em;
+    height: 20em;
+}
+
+.pictures:not(:nth-child(1)){
+    display: none;
+}
+
+/* 3. main */
+main{
+    background: rgba(240,240,240,0.8);
+    display: grid;
+    grid-template-areas: 
+    "sidebar article"
+    ". next";
+    grid-gap: 2em;
+    padding: 2em 2em;
+}
+
+.dropdown_contents {
+    display: none;
+}
+.dropdown_contents > * {
+    margin: 1em 0em;
+    margin-left: 1.5em;
+}
+
+.choose{
+    display: flex;
+}
+
+.choose >*{
+    margin: 0em 0.2em;
+}
+
+.sidebar{
+    margin: 1.2em 5em;
+    grid-area: sidebar;
+    height: 100%;
+    position: fixed;
+    overflow-x: hidden;
+}
+.sidebar::-webkit-scrollbar{
+    display:none;
+}
+
+.sidebar > div:last-child > div{
+    margin: 1em 0em;
+}
+.sidebar > div:last-child > div:first-child{
+    margin: 0em 1em;
+}
+.sidebar > div:last-child > div:last-child{
+    margin: 1em 0em;
+    grid-area: sidebar;
+}
+
+.img4{
+    display: flex;
+    justify-content: center;
+    margin: 1em 0em;
+    align-items: center;
+}
+
+.next{
+    grid-area: next;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.next > div > * {
+    margin: 1em;
+}
+
+.next > div > div:first-child{
+    display: flex;
+    flex-direction: row-reverse;;
+}
+.next > div > div:last-child {
+    display: flex;
+    font-weight: bold;
+}
+.next > div > div:last-child > *{
+    margin: 0em 0.2em;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+ul{
+    margin-top: 1em;
+}
+
+li {
+    line-height: 1.5em;
+    margin-left: 1em;
+    list-style-type: disc;
+}
+
+/* right-arrow */
+.fa-angle-right{
+    cursor: pointer; 
+}
+/* bottom-arrow */
+.fa-chevron-down {
+    cursor: pointer;
+    display: none;
+}
+
+/* .choose:nth-child(1):active {
+    .dropdown_contents
+} */

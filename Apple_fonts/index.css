@@ -1,0 +1,333 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ------------ */
+
+
+/* Write css */
+/* 1.Navigation */
+nav {
+    background-color: rgba(240, 240, 240, 0.8);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > * {
+    padding: 1em;
+}
+
+nav > div:not(:nth-child(1)){
+    font-size: 0.7em;
+    margin-top: 0.5em;
+}
+
+/* 2. Fonts Part */
+.fonts_item {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.fonts_item > div:last-child{
+    display: flex;
+    justify-content: space-between;
+}
+.fonts_item > div:last-child > *{
+    padding: 0em 1em;
+    padding-top: 0.3em;
+    color: #808080;
+    font-size: 0.7em;
+}
+
+
+/* 3. new in fonts */
+.new_in_fonts{
+    background: #ebf1f8;
+    /* text-align: center; */
+    padding: 10px;
+    color: blue;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    
+}
+.new_in_fonts>*{
+    margin: 0em 0.2em;
+}
+
+/* 4. Article1 */
+.article1{
+    background-color: white;
+    text-align: center;
+}
+
+.article1>* {
+    margin: 0em 5em;
+    margin-top: 2em;
+}
+.article1>div:nth-child(2){
+    margin: 2em 10em;
+}
+.article1 img{
+    margin: 0em 10em;
+    width: 25em;
+}
+
+/* 5. Article2 */
+.article2{
+    background-color: rgba(240, 240, 240, 0.8);
+    
+}
+
+.article2>div:first-child{
+    margin: 0em 3em;
+    padding-top: 1em;
+}
+.article2>div:last-child{
+    display: grid;
+    grid-template-rows: 1em 1fr 1fr 1em;
+    grid-template-columns: 4em 1fr 1fr 4em;
+    grid-template-areas: 
+        ". . . ."
+        ". first second ."
+        ". third fourth ."
+        ". . . .";
+    gap: 10px 10px;
+}
+/* .article2>div:last-child>*{ */
+    /* background-color: white; */
+    /* border-radius: 10px; */
+/* } */
+.article2>div:last-child>*{
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em;
+    font-size: 0.7em;
+}
+.article2>div:last-child>*>*{
+    margin: 10px;
+}
+button{
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.article2>div:last-child>div:nth-child(1){
+    grid-area: first;
+}
+.article2>div:last-child>div:nth-child(2){
+    grid-area: second;
+}
+.article2>div:last-child>div:nth-child(3){
+    grid-area: third;
+}
+.article2>div:last-child>div:nth-child(4){
+    grid-area: fourth;
+}
+
+/* 6. article 3 */
+.article3>div:first-child{
+    display: grid;
+    grid-template-columns: 5em 1fr 1fr 5em;
+    grid-template-areas: 
+    ". HumanInterfaceGuidelines videos  .";
+    padding: 1em 0em;
+}
+.article3>div:first-child>*{
+    font-size: 0.7em;
+    /* : 1em 0em; */
+}
+.article3>div:first-child>*>*{
+    /* font-size: 0.7em; */
+    margin: 1em 0em;
+}
+.article3>div:first-child>div:nth-child(1){
+    grid-area: HumanInterfaceGuidelines;
+}
+.article3>div:first-child>div:nth-child(2){
+    grid-area: videos;
+}
+
+hr {
+    margin: 1em 5em;
+}
+
+.article3>div:last-child>div:first-child{
+    margin: 1em 5em;
+}
+.article3>div:last-child>div:first-child>*{
+    margin: 1em 0em;
+}
+
+
+.article3>div:last-child>div:last-child{
+    margin: 1em 5em;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 0em 1fr 1fr 0em;
+    grid-template-areas: 
+        ". UlKit SFSymbols ."
+        ". AppKit AppleFontToolSuite ."
+        ". CoreText . .";
+    gap: 10px 0px;
+}
+
+.article3>div:last-child>div:last-child>*>*{
+    margin: 1em 0em;
+}
+
+.article3>div:last-child>div:last-child>div:nth-child(1){
+    grid-area: UlKit;
+}
+.article3>div:last-child>div:last-child>div:nth-child(2){
+    grid-area: SFSymbols;
+}
+.article3>div:last-child>div:last-child>div:nth-child(3){
+    grid-area: AppKit;
+}
+.article3>div:last-child>div:last-child>div:nth-child(4){
+    grid-area: AppleFontToolSuite;
+}
+.article3>div:last-child>div:last-child>div:nth-child(5){
+    grid-area: CoreText;
+}
+
+/* 7. Article 4 */
+.article4{
+    background:linear-gradient(rgba(240,240,240,0.8), #ffffff);
+    display: flex;
+    flex-direction: column;
+}
+
+.article4>*{
+    margin: 1em 5em;
+}
+
+.article4>div:first-child{
+    margin: 1em 3em;
+}
+
+/* 8. footer */
+footer{
+    font-size: 0.6em;
+    background: linear-gradient(rgba(240,240,240,0.8), #ffffff);
+
+}
+footer>*{
+    margin: 2em 7em;
+}
+footer>div:nth-child(1)>*{
+    margin: 1em 0em;
+}
+
+footer>div:nth-child(1)>div:nth-child(1){
+    display: flex;
+    padding-top: 2em;
+}
+footer>div:nth-child(1)>div:nth-child(1)>*{
+    margin : 0px 10px;
+}
+footer>div:nth-child(1)>div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+}
+
+footer>div:nth-child(1)>div:nth-child(2)>*>*{
+    margin: 7px;
+}
+
+footer>div:nth-child(1)>div:nth-child(2)>*>*>*{
+    margin: 7px;
+}
+footer>div:nth-child(2)>hr{
+    margin: 1em 0.1em;
+}
+
+footer>div:nth-child(2)>div:last-child{
+    display:flex;   
+}
+footer>div:nth-child(2)>div:last-child>div:last-child>*{
+    margin: 0em 1em;
+}
+
+/* titles */
+.titles{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* subtitles */
+.subtitles {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* a tag */
+a{
+    color: blue;
+}
+
+
+footer>div:nth-child(2)>div:last-child a{
+    color: black;
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+/* topics */
+.topics{
+    font-weight: 600;
+    color: #5f5f5f
+}
+
+.articles{
+    line-height: 1.5em;
+}

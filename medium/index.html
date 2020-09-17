@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Medium Clone Coding Test Page</title>
+</head>
+<body>
+    
+    <!-- 1. Medium logo & Sign in & Get Started -->
+    <header>
+        <div>
+            <div><i class="fab fa-medium fa-3x"></i>
+            </div>
+            <div>
+                <div>Sign in</div>
+                <button>Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. navigation -->
+    <nav>
+        <div><i class="fas fa-volleyball-ball"></i>
+            VoloSoft</div>
+        <div>ABP.IO</div>
+        <div>ASP.NET BOILERPLATE</div>
+        <div>WEB DEVELOPMENT</div>
+        <div>ASP.NET CORE</div>
+        <div>ANGULAR</div>
+        <div>CONFERENCE</div>
+        <div>|</div>
+        <div>💻 VOLOSOFT BLOG</div>
+    </nav>
+
+    <!-- 3. sidebar & main contents -->
+    <div class="main_contents">
+        <div class="sidebar">
+            <div>
+                <div>
+                    <div>VoloSoft</div>
+                    <div>VoloSoft</div>
+                </div>
+                <div>
+                    <button>Follow</button>
+                </div>  
+            </div>
+            <hr>
+            <div>
+                <div>
+                    Clap 926
+                </div>
+                <div>
+                    ~~ 2
+                </div>
+                <div>
+                    test
+                </div>
+            </div>
+        </div>
+        <main>
+            <!-- Main Header -->
+            <div> 
+                <div id="title">
+                    What is New in Angular 10?
+                </div> 
+                
+            </div>
+            
+            <!-- Writer Info -->
+            <div class="writer">
+                <div>
+                    <img src="./test.jpg" alt="person"/>
+                    <div>
+                        <div>Levent Arman Ozak</div>
+                        <div>Jun 25 - 6 min read</div>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <div>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="far fa-bookmark"></i>
+                </div>
+            </div>
+
+            <!-- articles -->
+            <article>
+                <div>
+                    <p>
+                        The new version, v10, of Angular has been published only hours ago and <a>announced by this blog post</a>. Although it may not appear as impactful as v9 (with Ivy and all), this release displays Angular team’s commitment to keep Angular up-to-date and relevant. 
+                    </p>
+                    <p>
+                        We found this very exciting and the timing was just right, because we are about to release <a>ABP</a> v3.0! So, we jumped into the details of what changed and how to migrate. Here is what we found.
+                    </p>
+                    <img src="./test2.jpg" alt="Angular.js" />
+                </div>
+                <div>
+                    <div class="titles">Major Changes</div>
+                    <div>
+                        <div class="subtitles">
+                            TypeScript v3.9 Support [breaking change] 
+                        </div>
+                        <div>
+                            <p>
+                                Angular 9 was released with TypeScript 3.7 support. Soon TypeScript 3.8 was released and Angular v9.1 supported it. Not long after, another TypeScript version, 3.9, is released and Angular responds with v10, keeping up, not only with TypeScript, but also with TSLib and TSLint.
+                            </p>
+                            <p>
+                                That is great news. Angular stays up-to-date. First of all, TypeScript 3.9 has performance improvements, which means faster Angular builds, especially in larger projects. Second, all latest TypeScript fixes and features are available to Angular developers. Last, but not the least, Angular developers will be using a more elaborate TypeScript configuration.
+                            </p>
+                            <p>
+                                Earlier versions of TypeScript are no longer supported, so you have to install v3.9 in your project. I believe a major reason behind this is the next feature I will describe.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="subtitles">
+                            “Solution Style” <span class="gray_background">tsconfig.json</span> Files
+                        </div>
+                        <div>
+                            <p>
+                                “Solution Style” <span class="gray_background">tsconfig.json</span> file support was introduced by TypeScript v3.9 to overcome issues with cases where a <span class="gray_background">tsconfig.json</span> existed just to reference other <span class="gray_background">tsconfig.json</span>files, known as a "solution". Angular 10 makes use of that concept and improves IDE support and, consequently, developer experience.
+                            </p>
+                            <p>
+                                A new file called tsconfig.base.json is introduced and what was inside the root <span class="gray_background">tsconfig.json</span> before is carried to this new file. You can find further details about the "solution" configuration here, but basically the new <span class="gray_background">tsconfig.json</span> at root level, before and after adding a library to the project, looks like below.
+                            </p>
+                            <div>
+                                <div class="subtitles">BEFORE:</div>
+                                <pre>
+                                    {
+                                      "files": [],
+                                      "references": [
+                                        {
+                                            "path": "./tsconfig.app.json"
+                                        },
+                                        {
+                                            "path": "./tsconfig.spec.json"
+                                        },
+                                        {
+                                            "path": "./e2e/tsconfig.json"
+                                        }
+                                      ]
+                                    }
+                                </pre>
+                            </div>
+                            <div>
+                                <div class="subtitles">AFTER:</div>
+                                <pre>
+                                    {
+                                      "files": [],
+                                      "references": [
+                                        {
+                                            "path": "./tsconfig.app.json"
+                                        },
+                                        {
+                                            "path": "./tsconfig.spec.json"
+                                        },
+                                        {
+                                            "path": "./e2e/tsconfig.json"
+                                        },
+                                        {
+                                            "path": "./projects/core/tsconfig.lib.json"
+                                        },
+                                        {
+                                            "path": "./projects/core/tsconfig.spec.json"
+                                        }
+                                      ]
+                                    }
+                                </pre>
+                            </div>
+                            <p>
+                                If you upgrade to Angular 10 using <span class="gray_background">ng update</span>, the CLI will migrate your workspace to this structure. Earlier versions of TypeScript does not support "solution style", so this may be the reason behind the breaking change described above.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="subtitles">
+                            Angular Package Format Changes & esm5/fesm5
+                        </div>
+                        <div>
+                            <p>
+                                Angular package format has changed, and the new format does not include <span class="gray_background">esm5</span> and <span class="gray_background">fesm5</span> distributions anymore. Angular packages (@angular/*) will not include them. Since Angular generates ES5 from ES2015 and ES2015 is the default language level consumed by Angular tooling, those code distributions had become obsolete. The format change is as follows:
+                            </p>
+                            <div>
+                                <div class="subtitles">BEFORE:</div>
+                                <pre>
+                                    {
+                                        ...
+                                        "main": "bundles/abp-ng.core.umd.js",
+                                        "module": "fesm5/abp-ng.core.js",
+                                        "es2015": "fesm2015/abp-ng.core.js",
+                                        "esm5": "esm5/abp-ng.core.js",
+                                        "esm2015": "esm2015/abp-ng.core.js",
+                                        "fesm5": "fesm5/abp-ng.core.js",
+                                        "fesm2015": "fesm2015/abp-ng.core.js",
+                                        ...
+                                      }
+                                      {
+                                        ...
+                                        "main": "bundles/abp-ng.core.umd.js",
+                                        "module": "fesm2015/abp-ng.core.js",
+                                        "es2015": "fesm2015/abp-ng.core.js",
+                                        "esm2015": "esm2015/abp-ng.core.js",
+                                        "fesm2015": "fesm2015/abp-ng.core.js",
+                                        ...
+                                      } 
+                                </pre>
+                            </div>
+                            <div>
+                                <div class="subtitles">AFTER:</div>
+                                <pre>
+                                    {
+                                        ...
+                                        "main": "bundles/abp-ng.core.umd.js",
+                                        "module": "fesm2015/abp-ng.core.js",
+                                        "es2015": "fesm2015/abp-ng.core.js",
+                                        "esm2015": "esm2015/abp-ng.core.js",
+                                        "fesm2015": "fesm2015/abp-ng.core.js",
+                                        ...
+                                      }
+                                </pre>
+                            </div>
+                            <p>
+                                If your application depends on esm5/fesm5 files, you can relax, because they are still consumable by the build system. Likewise, you do not have to worry if your Angular library does not ship <span class="gray_background">esm2015</span> or <span class="gray_background">fesm2015</span>, because the CLI will fallback to others. However, in favor of bundle optimization and build speed, it is recommended to deliver ES2015 outputs.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            Browserlist                        </div>
+                        <div>
+                            <p>
+                                Angular generates bundles based on the Browserlist configuration provided in the root app folder. Angular 10 will look up for a <span class="gray_background">.browserlistrc</span> in your app, but fall back to <span class="gray_background">browserlist</span> if not found. The <span class="gray_background">ng update</span> command will rename the file for you.                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="points">
+                    <div></div>
+                    <div>.</div>
+                    <div>.</div>
+                    <div>.</div>
+                    <div></div>
+                </div>
+                <div>
+                    <div class="titles">Breaking Changes</div>
+                    <ol>
+                        <li>
+                            Resolvers that return <span class="gray_background">EMPTY</span> will cancel navigation. In order to allow the router to continue navigating to the route, emit some value such as <span class="gray_background">of(null)</span>.
+                        </li>
+                        <li>
+                            Logging of unknown property bindings or element names in templates is increased to “error” level. It was “warning” before. The change may have an effect on tools not expecting an error log.
+                        </li>
+                        <li>
+                            Returning <span class="gray_background">null</span> from a UrlMatcher would throw <span class="gray_background">Type 'null' is not assignable to type 'UrlMatchResult'.</span>before. This is fixed, but the return type can now be <span class="gray_background">null</span> too.
+                        </li>
+                        <li>
+                            Reactive forms had a bug which caused <span class="gray_background">valueChanges</span> for controls bound to input fields with <span class="gray_background">number</span> type to fire twice. The listened evet is changed from "change" to "input" to fix this.
+                        </li>
+                        <li>
+                            <span class="gray_background">minLength</span> and <span class="gray_background">maxLength</span> validators validate only if the value has a numeric <span class="gray_background">length</span> property.
+                        </li>
+                        <li>
+                            There was a bug in detection of day span while using <span class="gray_background">formatDate()</span> or <span class="gray_background">DatePipe</span> and <span class="gray_background">b</span> or <span class="gray_background">B</span> format code. It is fixed and the output, for instance, will now be "at night" instead of "AM".
+                        </li>
+                        <li>
+                            Transplanted views (declared in one component and inserted into another) had change detection issues, but that is fixed now. Detection after detaching and double detection are avoided.
+                        </li>
+                    </ol>
+                </div>
+                <div class="points">
+                    <div></div>
+                    <div>.</div>
+                    <div>.</div>
+                    <div>.</div>
+                    <div></div>
+                </div>
+                <div>
+                    <div class="titles">Deprecations and Removals</div>
+                    <div>
+                        <div class="subtitles">ModuleWithProviders Without a Generic Type [removed]</div>
+                        <p>Earlier versions of Angular was able to compile static method returns with <span class="gray_background">ModuleWithProviders</span> type without the generic type, i.e.<span class="gray_background">ModuleWithProviders&ltSomeModule&gt</span>, because the generated <span class="gray_background">metadata.json</span> files would have the information required for compilation. After Ivy, since <span class="gray_background">metadata.json</span> is not required, Angular checks the generic type for type validation.
+                        </p>
+                        <div>
+                            <div class="subtitles">BEFORE:</div>
+                            <pre>
+                                @NgModule({...})
+                                export class SomeModule {
+                                static forRoot(): ModuleWithProviders {
+                                    return {
+                                    ngModule: SomeModule,
+                                    providers: [...]
+                                    };
+                                }
+                                }
+                            </pre>
+                        </div>
+                        <div>
+                            <div class="subtitles">AFTER:</div>
+                            <pre>
+                                @NgModule({...})
+                                export class SomeModule {
+                                static forRoot(): ModuleWithProviders<SomeModule> {
+                                    return {
+                                    ngModule: SomeModule,
+                                    providers: [...]
+                                    };
+                                }
+                                }
+                            </pre>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="gray_background">ModuleWithProviders</span> without a generic type was deprecated before. As of Angular 10, it is completely removed.
+                    </div>
+                </div>
+                <div>
+                    <div class="subtitles">Undecorated Base Classes [removed]</div>
+                    <p>
+                        If you are taking advantage of inheritance from classes that use Angular features such as dependency injection or Angular decorators , you now need to decorate those base classes as well. Otherwise, Angular will throw an error about the missing decorator on the parent.
+                    </p>
+                    <div>
+                        <div class="subtitles">DEPENDENCY INJECTION:</div>
+                        <pre>
+                            @Directive()
+                            export abstract class AbstractSome {
+                            constructor(@Inject(LOCALE_ID) public locale: string) {}
+                            }
+                            ​
+                            @Component({
+                            selector: 'app-some',
+                            template: 'Locale: {{ locale }}',
+                            })
+                            export class SomeComponent extends AbstractSome {}
+                        </pre>
+                        <p>
+                            Here is the error Angular 10 compiler throws when the <span class="gray_background">Directive</span> decorator is missing:
+                        </p>
+                        <p class="gray_background" style="padding: 1em"></span>
+                            The component SomeComponent inherits its constructor from AbstractSome, but the latter does not have an Angular decorator of its own. Dependency injection will not be able to resolve the parameters of AbstractSome's constructor. Either add a @Directive decorator to AbstractSome, or add an explicit constructor to SomeComponent.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="subtitles">DECORATOR:</div>
+                        <pre>
+                            @Directive()
+                            export abstract class AbstractSome {
+                            @Input() x: number;
+                            }
+                            ​
+                            @Component({
+                            selector: 'app-some',
+                            template: 'Value of X: {{ x }}',
+                            })
+                            export class SomeComponent extends AbstractSome {}
+                        </pre>
+                        <p>
+                            Angular 10 compiler throws a less detailed error this time:
+                        </p>
+                        <p class="gray_background" style="padding: 1em">
+                            Class is using Angular features but is not decorated. Please add an explicit Angular decorator.
+                        </p>
+                        <p>
+                            I am sure you would not do that, but if you put a Component decorator on the parent and remove the decorator on the child, as you would expect, Angular 10 compiler will throw the error below:
+                        </p>
+                        <p>
+                            The class 'SomeComponent' is listed in the declarations of the NgModule 'AppModule', but is not a directive, a component, or a pipe. Either remove it from the NgModule's declarations, or add an appropriate Angular decorator.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="subtitles">
+                            WrappedValue [deprecated]
+                        </div>
+                        <p>
+                            WrappedValue is deprecated and will probably be removed with v12. Check here and here if you have never heard of it before.
+                        </p>
+                        <p>
+                            It was useful to trigger change detection even when same object instance was produced/emitted. There is a performance cost when WrappedValue is used and the cases where it helps are relatively rare, so Angular team has decided to drop it.
+                        </p>
+                        <p>
+                            As a side effect of this deprecation, you may see more ExpressionChangedAfterItHasBeenChecked errors than before, because Angular would not throw an error when WrappedValues were evaluated as equal.
+                        </p>
+                        <p>
+                            Incase you face change detection issues, try cloning the object or trigger change detection manually via markForCheck or detectChanges methods of the ChangeDetectorRef.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="subtitles">Other Deprecations & Removals</div>
+                        <ol>
+                            <li>
+                                Support for IE9, IE10, and IE Mobile has been deprecated and will be dropped later. The increased bundle size and complexity was the main reason. Considering even Microsoft dropped support for these browsers, it makes a lot of sense.
+                            </li>
+                            <li>
+                                Angular stopped sanitizing the style property bindings. This is due to drop of support for legacy browsers (like IE6 and IE7) and the performance cost of having a sanitizer.
+                            </li>
+                            <li>
+                                Bazel build schematics will not be continued. Angular team explained the reasons and referred to this monorepo as a source to keep an eye on, if you are interested in building Angular with Bazel.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="points">
+                    <div></div>
+                    <div>.</div>
+                    <div>.</div>
+                    <div>.</div>
+                    <div></div>
+                </div>
+                <div>
+                    <div class="titles">Conclusion</div>
+                    <p>I would like to emphasize how thankful I am that Angular team is trying to keep Angular up-to-date. This is a great demonstration and, in my humble opinion, just as meaningful as a state-of-art renderer. It is also very nice to see how easy it is to migrate an existing project. Angular not only keeps up with its ecosystem, but also helps you to keep up together with it.</p>
+                    <p>Congratulations, and thank you!</p>
+                </div>
+                <div class="points">
+                    <div></div>
+                    <div>.</div>
+                    <div>.</div>
+                    <div>.</div>
+                    <div></div>
+                </div>
+                <div>
+                    <div>This article was originally published on Volosoft Blog.</div>
+                    <div class="hashtags">
+                        <div>Angular</div>
+                        <div>Front End Development</div>
+                        <div>Software Development</div>
+                        <div>Programming</div>
+                        <div>JavaScript</div>
+                    </div>
+                    <div>
+                        <div class="sns">
+                            <div>
+                                <div>Clap 926</div>
+                                <div>ballon 2</div>
+                            </div>
+                            <div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div>
+                            <div class="written_by">
+                                <div>
+                                    <img class="person_img" src="./test.jpg" alt="person"/>
+                                    <div>
+                                        <div>
+                                            WRITTEN BY
+                                        </div>
+                                        <div>
+                                            Levent Arman Özak
+                                        </div>
+                                        <div>
+                                            Twitter: @ArmanOzak — founder of NG Turkey, JavaScript developer & trainer, tech blogger, dad
+                                        </div>
+                                    </div>
+                                </div>
+                                <button>
+                                    Follow
+                                </button>
+                            </div>
+                            <div class="written_by">
+                                
+                                <div>
+                                    <i class="fas fa-volleyball-ball"></i>
+                                    <div>
+                                        <div>
+                                            Volosoft
+    
+                                        </div>
+                                        <div>
+                                            Volosoft
+                                        </div>
+                                    </div>
+                                </div>
+                                <button>
+                                    Follow
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div>
+                        <div>
+                            More From Medium
+                        </div>
+                        <hr>
+                        <div class="morefrom">
+                            <div>
+                                <div>
+                                    <div>Beginner’s working guide to JavaScript generators</div>
+                                    <div>Fabian Terh</div>
+                                </div>
+                                <img src="morefromimages/to1.jpg" alt="to1">
+                            </div>
+                            <div>
+                                <div>
+                                    <div>Uploading Images to MongoDB with Multer</div>
+                                    <div>Tom Settle in The Startup</div>
+                                </div>
+                                <img src="morefromimages/to2.jpg" alt="to2">
+                            </div>
+                            <div>
+                                <div>
+                                    <div>How to use VueJs instead of jQuery</div>
+                                    <div>Antonin Savoie in Kaliop</div>
+                                </div>
+                                <img src="morefromimages/to3.jpg" alt="to3">
+                            </div>
+                            <div>
+                                <div>
+                                    <div>What to do when your Angular app runs out of JavaScript Heap Space?</div>
+                                    <div>Joshua Michael Waggoner</div>
+                                </div>
+                                <img src="morefromimages/to4.jpg" alt="to4">
+                            </div>
+                            <div>
+                                <div>
+                                    <div>Disappearing Frameworks</div>
+                                    <div>Peter O'Shaughnessy in Samsung Internet Developers</div>
+                                </div>
+                                <img src="morefromimages/to5.jpg" alt="to5">
+                            </div>
+                            <div>
+                                <div>
+                                    <div>A Quick Guide to Integrating Leaflet.js and React</div>
+                                    <div>Alexandar Zaharyan in Better Programming</div>
+                                </div>
+                                <img src="morefromimages/to6.jpg" alt="to6">
+                            </div>
+                            <div>
+                                <div>
+                                    <div>How To Code The “Fizz Buzz” Challenge Using JavaScript Generators</div>
+                                    <div>Justin Travis Waith-Mair in The Non-Traditional Developer</div>
+                                </div>
+                                <img src="morefromimages/to7.jpg" alt="to7">
+                            </div>
+                            <div>
+                                <div>
+                                    <div>CodePen Is a Nearly Perfect Place for Kids to Learn to Code</div>
+                                    <div>Matthew MacDonald in Young Coder</div>
+                                </div>
+                                <img src="morefromimages/to8.jpg" alt="to8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+        <!-- footer -->
+        <footer>
+            <div>
+                <div>
+                    <div class="footer_title">Discover Medium</div>
+                    <p>
+                        Welcome to a place where words matter. On Medium, smart voices and original ideas take center stage - with no ads in sight. Watch 
+                    </p>
+                </div>
+                <div>
+                    <div class="footer_title">Make Medium yours</div>
+                    <p>
+                        Follow all the topics you care about, and we’ll deliver the best stories for you to your homepage and inbox. Explore 
+                    </p>
+                </div>
+                <div>
+                    <div class="footer_title">Become a member</div>
+                    <p>
+                        Get unlimited access to the best stories on Medium — and support writers while you’re at it. Just $5/month. Upgrade
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div>Medium</div>
+                <div>
+                    <div>About</div>
+                    <div>Help</div>
+                    <div>Legal</div>
+                </div>
+            </div>
+        </footer>
+    
+</body>
+</html>

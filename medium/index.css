@@ -1,0 +1,282 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*  */
+
+/* 1. Header */
+.writer{
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+.writer > * {
+    display: flex;
+    width: 15em;
+    justify-content: space-between;
+}
+.writer img, .person_img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid green;
+    padding: 0.2em; 
+}
+.writer button {
+    border-radius: 5px;
+    border: 1px soild gray;
+    background: white;
+    height: fit-content;
+}
+
+
+header > div{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;     
+    border-bottom: solid 1px rgba(240, 240, 240, 0.8);
+}
+
+header > div > div:last-child {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    color: cyan;
+}
+
+header > div > div:last-child > div:first-child{
+    margin: 1em 0em;
+} 
+header > div > div:last-child > button {
+    border: 1px solid cyan;
+    color: cyan;
+    background: white;
+    border-radius : 10px;
+    padding: 0em 2em;
+}
+
+/* 2. navigation */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+    /* white-space: nowrap; */
+    /* border-bottom: solid 1px rgba(240, 240, 240, 0.8); */
+    box-shadow: 0px 4px rgba(240, 240, 240, 0.5);
+}
+
+/* 3. main contents & sidebar */
+#title{
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.sidebar {
+    display: none;
+}
+
+.gray_background{
+    background: rgba(240, 240, 240, 0.8);
+    padding: 0.2em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main > div:first-child {
+    /* text-align: center; */
+    display: flex;
+    padding: 1em;
+}
+
+article{ 
+    padding: 1em;
+}
+
+article > div:first-child > img {
+    padding: 0em;
+}
+
+article pre {
+    background: rgba(240, 240, 240, 0.8);
+}
+
+article li{
+    list-style-type: disc;
+    margin: 0em 1em;
+}
+article p, article pre, article li{
+    line-height: 1.5em;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+article > div:not(:first-child) > *{
+    margin: 1em 0em;
+}
+article  p {
+    margin: 1em 0em;
+}
+/* 4. footer  */
+footer {
+    background: black;
+    color: white;
+    padding: 1em;
+}
+
+.footer_title{
+    font-weight: bold;
+}
+
+footer > div:first-child {
+    display: grid;
+    grid-template-areas: 
+    "first second third";
+    grid-gap: 1em;
+}
+
+footer * {
+    margin: 1em 0;
+}
+
+footer p {
+    color: gray;
+}
+
+
+footer > div:last-child {
+    display: flex;
+    justify-content: space-between;
+}
+footer > div:last-child > div:last-child {
+    display: grid;
+    grid-template-areas:
+    "first1 second2 third3";
+    grid-gap: 4em;
+    margin: 0em ;
+}
+
+.titles{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.subtitles{
+    font-weight: bold;
+    font-size: 1em;
+    margin: 1em 0em;
+}
+
+/* hashtags */
+.hashtags{
+    display: flex;
+    justify-content: space-around;
+}
+.hashtags > div{
+    background: rgba(240, 240, 240, 0.8);
+    padding: 0.5em;
+}
+
+/* points */
+.points{
+    display: grid;
+    grid-template-columns: 1fr 10px 10px 10px 1fr;
+    grid-template-areas: 
+    ". . point . .";
+}
+.points > *{
+    text-align: center;
+}
+
+
+/* sns */
+.sns{
+    display: flex;
+}
+.sns > div:last-child {
+    display: grid;
+    grid-template-areas: 
+    "twitter linkedin facebook bookmark";
+    grid-gap : 1em;
+}
+
+/* written_by */
+.written_by {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+}
+
+.written_by > div {
+    display: grid;
+    grid-template-columns: 50px 1fr 10px;
+}
+
+
+.morefrom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.morefrom > div  {
+    width: 22em;
+    margin: 1em;
+    display: flex;
+    
+}
+
+.morefrom > * > * {
+    margin: 10px;
+} 
+
+.morefrom img {
+    width: 50px;
+    height: 50px;
+}
